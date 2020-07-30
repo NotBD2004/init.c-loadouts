@@ -1,0 +1,69 @@
+   ////BELOW IS WHERE TO EDIT STARTING GEAR 
+
+    override void StartingEquipSetup(PlayerBase player, bool clothesChosen)
+    {	
+        TStringArray tops = {"ParamedicJacket_Crimson","HuntingJacket_Summer","PoliceJacketOrel","Raincoat_Pink","M65Jacket_Tan","BDUJacket"};
+        TStringArray pants = {"HunterPants_Winter","Breeches_Pink","GorkaPants_Summer","Jeans_Grey","BDUPants","PolicePantsOrel"};
+        TStringArray shoes = {"JoggingShoes_Red","Wellies_Green","WorkingBoots_Yellow","MilitaryBoots_Redpunk"};
+        TStringArray tool = {"DC_FastTravelTicket"};
+        TStringArray medic = {"BandageDressing"};
+        TStringArray drink = {"WaterBottle","Canteen","SodaCan_Kvass","SodaCan_Spite"};
+        TStringArray food = {"BakedBeansCan","sandwich_mung"};
+		TStringArray hat = {"PumpkinHelmet","BandanaHead_PolkaPattern","CowboyHat_black","TankerHelmet"};
+		TStringArray melee = {"SawedoffIzh43Shotgun","Pitchfork","Machete"};	
+        TStringArray vest = {"HuntingVest"};		
+        TStringArray backpack = {"LeatherSack_Black","WaterproofBag_Orange","FurImprovisedBag"};	
+        player.RemoveAllItems();       
+        
+        EntityAI itemEnt;
+        EntityAI itemIn;
+        ItemBase itemBs;
+
+        EntityAI item = player.GetInventory().CreateInInventory(tops.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+      //  SetHealth(itemEnt, 20);
+        
+        EntityAI item2 = player.GetInventory().CreateInInventory(pants.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+     //   SetHealth(itemEnt, 20);
+        
+        EntityAI item3 = player.GetInventory().CreateInInventory(shoes.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+     //   SetHealth(itemEnt, 20);
+                
+        itemEnt = player.GetInventory().CreateInInventory(tool.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+      //  SetRandomHealth(itemEnt);
+
+        itemEnt = player.GetInventory().CreateInInventory(medic.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+     //   SetRandomHealth(itemEnt);
+
+        itemEnt = player.GetInventory().CreateInInventory(drink.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+     //   SetRandomHealth(itemEnt);
+
+        itemEnt = player.GetInventory().CreateInInventory(food.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+     //   SetRandomHealth(itemEnt);
+		
+        itemEnt = player.GetInventory().CreateInInventory(hat.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+      //  SetRandomHealth(itemEnt);
+		
+        itemEnt = player.GetInventory().CreateInInventory(melee.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+      //  SetRandomHealth(itemEnt);
+		
+        itemEnt = player.GetInventory().CreateInInventory(vest.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+      //  SetRandomHealth(itemEnt);	
+
+        itemEnt = player.GetInventory().CreateInInventory(backpack.GetRandomElement());
+        itemBs = ItemBase.Cast(itemEnt);
+     //   SetRandomHealth(itemEnt);		
+		GetClassSelection().GiveClassEquipment(m_player)
+    }
+};
+  
+Mission CreateCustomMission(string path)
